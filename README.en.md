@@ -24,9 +24,13 @@ No compilation or build step required. The repository root is a standard ready-t
 2. In Kiss-Translator Settings, go to **Interface Plugins (接口插件)**.
 3. Click **Import Folder (导入文件夹)** and select the directory containing `manifest.json`.
 
-### Method 2: Import via GitHub URL
-1. In Kiss-Translator Settings -> **Interface Plugins**.
-2. Enter the GitHub repository URL into the **GitHub project or HTTPS ZIP URL** field and click install.
+### Method 2: Import via GitHub URL (Recommended)
+1. In Kiss-Translator Settings -> **Interface Plugins (接口插件)**.
+2. Enter the repository URL into the **GitHub project or HTTPS ZIP URL** field:
+   ```text
+   https://github.com/fangzi2006/kiss-translator-plugins-volcengine
+   ```
+3. Click **Install (安装)**.
 
 ### Method 3: Import ZIP
 1. Compress all files in the plugin root into a `.zip` archive (ensure `manifest.json` is at the zip root).
