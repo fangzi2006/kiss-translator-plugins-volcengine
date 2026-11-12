@@ -1,0 +1,86 @@
+{
+  "id": "volcengine-translate",
+  "name": "火山机器翻译",
+  "version": "1.0.0",
+  "apiVersion": 1,
+  "icon": "assets/logo.png",
+  "description": "火山引擎官方机器翻译（TranslateText）接口插件，基于 V4 签名认证，支持高并发多段落批量翻译。",
+  "permissions": {
+    "network": [
+      "https://translate.volcengineapi.com"
+    ],
+    "endpointFields": [
+      "baseUrl"
+    ]
+  },
+  "sharedSettings": [
+    {
+      "key": "baseUrl",
+      "label": "API 基础地址",
+      "type": "text",
+      "defaultValue": "https://translate.volcengineapi.com",
+      "required": true,
+      "labelI18n": {
+        "zh": "API 基础地址",
+        "en": "API base URL",
+        "zh_TW": "API 基礎地址"
+      }
+    },
+    {
+      "key": "accessKeyId",
+      "label": "AccessKey ID (AK)",
+      "type": "text",
+      "required": true,
+      "labelI18n": {
+        "zh": "AccessKey ID (AK)",
+        "en": "AccessKey ID (AK)",
+        "zh_TW": "AccessKey ID (AK)"
+      }
+    },
+    {
+      "key": "secretAccessKey",
+      "label": "Secret Access Key (SK)",
+      "type": "text",
+      "required": true,
+      "labelI18n": {
+        "zh": "Secret Access Key (SK)",
+        "en": "Secret Access Key (SK)",
+        "zh_TW": "Secret Access Key (SK)"
+      }
+    },
+    {
+      "key": "region",
+      "label": "Region（地域）",
+      "type": "text",
+      "defaultValue": "cn-north-1",
+      "required": false,
+      "labelI18n": {
+        "zh": "Region（地域）",
+        "en": "Region",
+        "zh_TW": "Region（地域）"
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "volcengine-text-translate",
+      "name": "火山文本翻译",
+      "implementation": {
+        "kind": "script",
+        "entry": "services/translate.js"
+      },
+      "capabilities": {
+        "translate": {
+          "handler": "translate",
+          "batch": {
+            "supported": true
+          },
+          "outputModes": [
+            "complete"
+          ]
+        }
+      },
+      "settings": []
+    }
+  ]
+}
